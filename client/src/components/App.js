@@ -1,12 +1,15 @@
 import React from "react";
 import { hot } from "react-hot-loader/root";
 import axios from "axios";
+import Summary from "./Summary.js";
+import Form from "./Form.js";
+import sampleData from "../sample_data.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: [],
+      entries: sampleData,
     };
   }
 

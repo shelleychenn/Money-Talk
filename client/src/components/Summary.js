@@ -1,10 +1,11 @@
 import React from "react";
+import Entry from "./Entry.js";
 
 const Summary = (props) => {
   return (
     <div className="summary">
       <ul>
-        {props.todos.map((entry) => (
+        {props.entries.map((entry) => (
           <Entry entry={entry} key={entry._id} />
         ))}
       </ul>
