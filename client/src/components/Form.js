@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 
-class Form extends Component {
-  constructor() {
-    super();
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       value: "",
