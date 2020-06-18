@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./client/index.js":
+/*!*************************!*\
+  !*** ./client/index.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/shelleychen/Documents/budget/client/index.js: Unexpected token (7:16)\\n\\n\\u001b[0m \\u001b[90m 5 | \\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 6 | \\u001b[39m\\u001b[36mvar\\u001b[39m mountNode \\u001b[33m=\\u001b[39m document\\u001b[33m.\\u001b[39mgetElementById(\\u001b[32m\\\"app\\\"\\u001b[39m)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 7 | \\u001b[39m\\u001b[33mReactDOM\\u001b[39m\\u001b[33m.\\u001b[39mrender(\\u001b[33m<\\u001b[39m\\u001b[33mApp\\u001b[39m name\\u001b[33m=\\u001b[39m\\u001b[32m\\\"Jane\\\"\\u001b[39m \\u001b[33m/\\u001b[39m\\u001b[33m>\\u001b[39m\\u001b[33m,\\u001b[39m mountNode)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m   | \\u001b[39m                \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n    at Parser._raise (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:746:17)\\n    at Parser.raiseWithData (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:739:17)\\n    at Parser.raise (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:733:17)\\n    at Parser.unexpected (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:8807:16)\\n    at Parser.parseExprAtom (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:10130:20)\\n    at Parser.parseExprSubscripts (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9656:23)\\n    at Parser.parseMaybeUnary (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9636:21)\\n    at Parser.parseExprOps (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9506:23)\\n    at Parser.parseMaybeConditional (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9479:23)\\n    at Parser.parseMaybeAssign (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9434:21)\\n    at Parser.parseExprListItem (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:10792:18)\\n    at Parser.parseCallExpressionArguments (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9850:22)\\n    at Parser.parseSubscript (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9750:31)\\n    at Parser.parseSubscripts (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9679:19)\\n    at Parser.parseExprSubscripts (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9662:17)\\n    at Parser.parseMaybeUnary (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9636:21)\\n    at Parser.parseExprOps (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9506:23)\\n    at Parser.parseMaybeConditional (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9479:23)\\n    at Parser.parseMaybeAssign (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9434:21)\\n    at Parser.parseExpression (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:9386:23)\\n    at Parser.parseStatementContent (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:11285:23)\\n    at Parser.parseStatement (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:11156:17)\\n    at Parser.parseBlockOrModuleBlockBody (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:11731:25)\\n    at Parser.parseBlockBody (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:11717:10)\\n    at Parser.parseTopLevel (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:11087:10)\\n    at Parser.parse (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:12768:10)\\n    at parse (/Users/shelleychen/Documents/budget/node_modules/@babel/parser/lib/index.js:12821:38)\\n    at parser (/Users/shelleychen/Documents/budget/node_modules/@babel/core/lib/parser/index.js:54:34)\\n    at parser.next (<anonymous>)\\n    at normalizeFile (/Users/shelleychen/Documents/budget/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbXSwibWFwcGluZ3MiOiIiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./client/index.js\n");
+
+/***/ }),
+
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -171,14 +182,14 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ }),
 
 /***/ 0:
-/*!***************************************************!*\
-  !*** multi react-hot-loader/patch ./src/index.js ***!
-  \***************************************************/
+/*!******************************************************!*\
+  !*** multi react-hot-loader/patch ./client/index.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! react-hot-loader/patch */"./node_modules/react-hot-loader/patch.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module './src/index.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! ./client/index.js */"./client/index.js");
 
 
 /***/ })
