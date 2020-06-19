@@ -1,13 +1,23 @@
 import React from "react";
+import Entry from "./Entry.js";
 
 const Summary = (props) => {
   return (
     <div className="summary">
-      <ul>
-        {props.todos.map((entry) => (
+      <h2 className="summary-heading">This is where your money goes</h2>
+      <table className="table">
+        <tr>
+          <th className="date">Date</th>
+          <th className="description">Description</th>
+          <th className="amount">Amount</th>
+          <th className="transactionType">Debit/Credit</th>
+          <th className="category">Category</th>
+          <th className="accountName">Account</th>
+        </tr>
+        {props.entries.map((entry) => (
           <Entry entry={entry} key={entry._id} />
         ))}
-      </ul>
+      </table>
     </div>
   );
 };

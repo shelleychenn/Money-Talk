@@ -1,12 +1,16 @@
 import React from "react";
+import Favicon from "react-favicon";
 import { hot } from "react-hot-loader/root";
 import axios from "axios";
+import Summary from "./Summary.js";
+import Form from "./Form.js";
+import sampleData from "../sample_data.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries: [],
+      entries: sampleData,
     };
   }
 
@@ -30,9 +34,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Money Talk</h1>
-        <Summary entries={this.state.entries} />
-        <Form />
+        <Favicon url="https://money.pro/favicon.ico" />
+        <div className="header">
+          <div className="logo"></div>
+        </div>
+        <div className="container">
+          <Summary entries={this.state.entries} />
+          <Form />
+        </div>
       </div>
     );
   }
