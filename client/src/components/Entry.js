@@ -2,7 +2,7 @@ import React from "react";
 
 const Entry = ({ entry, update, deleteEntry }) => {
   return (
-    <div className="entry">
+    <tbody>
       <tr>
         <td className="date">{entry.date}</td>
         <td
@@ -33,7 +33,7 @@ const Entry = ({ entry, update, deleteEntry }) => {
           Delete
         </button>
       </tr>
-    </div>
+    </tbody>
   );
 };
 

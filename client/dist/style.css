@@ -7,14 +7,18 @@
 .logo {
   background-image: url("https://i.imgur.com/eEwuSsj.png");
   background-repeat: no-repeat;
-  padding-bottom: 220px;
+  padding-bottom: 170px;
   background-size: auto;
   background-position: center top;
+}
+.overview {
+  text-align: center;
 }
 .summary {
   position: absolute;
   right: 50px;
   width: 50%;
+  margin-top: 130px;
 }
 .summary-heading {
   text-align: center;
@@ -23,11 +27,10 @@
   position: absolute;
   left: 50px;
   width: 50%;
+  margin-top: 130px;
 }
 .form-heading {
   margin-left: 150px;
-}
-.entry {
 }
 .button {
   margin-top: 10px;
