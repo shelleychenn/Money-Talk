@@ -38,28 +38,29 @@ budgetController.getAll = (req, res) => {
     });
 };
 
-// to update a selected entry
+// to update the description of an entry
 budgetController.update = (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
   BudgetEntry.updateOne(
-    { description: req.body.description },
+    { _id: req.params.id },
     {
       $set: {
-        date: req.body.newDate,
-        description: req.body.newDescription,
-        amount: req.body.newAmount,
-        transactionType: req.body.newTransactionType,
-        category: req.body.newCategory,
-        accountName: req.body.newAccountName,
+        date: req.body.date,
+        description: req.body.description,
+        amount: req.body.amount,
+        transactionType: req.body.transactionType,
+        category: req.body.category,
+        accountName: req.body.accountName,
       },
     }
   )
     .then(() => {
-      console.log('update successfully');
+      console.log('description successfully updated');
       res.sendStatus(200);
     })
     .catch((err) => {
       console.log(err);
-      res.sendStatus(500);
     });
 };
 

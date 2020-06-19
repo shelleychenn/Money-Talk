@@ -1,12 +1,17 @@
-import React from "react";
-import Entry from "./Entry.js";
+import React from 'react';
+import Entry from './Entry.js';
 
-const Summary = (props) => {
+const Summary = ({ entries, update, deleteEntry }) => {
   return (
     <div className="summary">
       <ul>
-        {props.entries.map((entry) => (
-          <Entry entry={entry} key={entry._id} />
+        {entries.map((entry) => (
+          <Entry
+            entry={entry}
+            key={entry._id}
+            update={update}
+            deleteEntry={deleteEntry}
+          />
         ))}
       </ul>
     </div>

@@ -1,9 +1,32 @@
-import React from "react";
+import React from 'react';
 
-const Entry = (props) => {
+const Entry = ({ entry, update, deleteEntry }) => {
   return (
     <div className="entry">
-      <li>{props.entry.description}</li>
+      <li>
+        <div
+          onClick={() => {
+            update(entry, 'description');
+          }}
+        >
+          {entry.description}
+        </div>
+        <div
+          onClick={() => {
+            update(entry, 'amount');
+          }}
+        >
+          ${entry.amount}
+        </div>
+      </li>
+      <button
+        className="delete-button"
+        onClick={() => {
+          deleteEntry(entry);
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };
