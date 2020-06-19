@@ -1,16 +1,16 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
-      description: '',
-      amount: '',
-      transactionType: '',
-      category: '',
-      accountName: '',
+      date: "",
+      description: "",
+      amount: "",
+      transactionType: "",
+      category: "",
+      accountName: "",
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -65,12 +65,12 @@ class Form extends React.Component {
     console.log(this.state);
     this.props.submitNewEntry(this.state);
     this.setState({
-      date: '',
-      description: '',
-      amount: '',
-      transactionType: '',
-      category: '',
-      accountName: '',
+      date: "",
+      description: "",
+      amount: "",
+      transactionType: "",
+      category: "",
+      accountName: "",
     });
   }
 
@@ -82,11 +82,12 @@ class Form extends React.Component {
           <div>
             <input
               className="form-input"
-              type="text"
+              type="date"
               name="date"
               value={this.state.date}
               onChange={this.handleDateChange}
               placeholder="01/01/2020"
+              required
             ></input>
           </div>
           <textarea
@@ -96,6 +97,7 @@ class Form extends React.Component {
             name="description"
             value={this.state.description}
             onChange={this.handleDescriptionChange}
+            required
           ></textarea>
           <input
             className="form-input"
@@ -103,16 +105,24 @@ class Form extends React.Component {
             name="amount"
             value={this.state.amount}
             onChange={this.handleAmountChange}
-            placeholder="$ amount"
+            placeholder="Amount $"
+            required
           ></input>
-          <input
-            className="form-input"
-            type="text"
-            name="transactionType"
+          <label className="label">Choose a transaction type:</label>
+          <select
             value={this.state.transactionType}
             onChange={this.handleTransactionTypeChange}
+            className="form-input"
             placeholder="Debit/Credit"
-          ></input>
+            required
+          >
+            <option value="Debit" name="transactionType">
+              Debit
+            </option>
+            <option value="Credit" name="transactionType">
+              Credit
+            </option>
+          </select>
           <input
             className="form-input"
             type="text"
@@ -120,6 +130,7 @@ class Form extends React.Component {
             value={this.state.category}
             onChange={this.handleCategoryChange}
             placeholder="Category"
+            required
           ></input>
           <input
             className="form-input"
@@ -128,6 +139,7 @@ class Form extends React.Component {
             value={this.state.accountName}
             onChange={this.handleAccountNameChange}
             placeholder="Account"
+            required
           ></input>
           <button className="button" type="submit">
             Add Entry
