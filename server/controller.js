@@ -1,4 +1,4 @@
-const BudgetEntry = require('../db/Budget.js');
+const BudgetEntry = require("../db/Budget.js");
 
 let budgetController = {};
 
@@ -16,7 +16,7 @@ budgetController.post = (req, res) => {
   newEntry
     .save()
     .then(() => {
-      console.log('entry saved successfully!');
+      console.log("entry saved successfully!");
       res.sendStatus(200);
     })
     .catch((err) => {
@@ -28,8 +28,9 @@ budgetController.post = (req, res) => {
 // to get all entries saved in database
 budgetController.getAll = (req, res) => {
   BudgetEntry.find()
+    .sort({ date: -1 })
     .then((data) => {
-      console.log('sucess: ', data);
+      console.log("sucess: ", data);
       res.status(200).send(data);
     })
     .catch((err) => {
@@ -56,7 +57,7 @@ budgetController.update = (req, res) => {
     }
   )
     .then(() => {
-      console.log('description successfully updated');
+      console.log("description successfully updated");
       res.sendStatus(200);
     })
     .catch((err) => {
@@ -69,7 +70,7 @@ budgetController.delete = (req, res) => {
   let params = req.params.id;
   BudgetEntry.deleteOne({ _id: params })
     .then(() => {
-      console.log('entry successfuly deleted!');
+      console.log("entry successfuly deleted!");
       res.sendStatus(200);
     })
     .catch((err) => {

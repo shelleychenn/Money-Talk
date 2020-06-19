@@ -1,10 +1,11 @@
 import React from "react";
+import moment from "moment";
 
 const Entry = ({ entry, update, deleteEntry }) => {
   return (
     <tbody>
       <tr>
-        <td className="date">{entry.date}</td>
+        <td className="date">{moment(entry.date).format("LL")}</td>
         <td
           className="description"
           onClick={() => {
