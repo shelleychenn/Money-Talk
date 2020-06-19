@@ -37,6 +37,8 @@ const Summary = ({
               key={entry._id}
               update={update}
               deleteEntry={deleteEntry}
+              getEntryByCategories={getEntryByCategories}
+              handleViewChange={handleViewChange}
             />
           ))}
         </tbody>
