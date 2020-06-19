@@ -3,6 +3,7 @@ import { hot } from 'react-hot-loader/root';
 import axios from 'axios';
 import Summary from './Summary.js';
 import Form from './Form.js';
+import Overview from './Overview.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class App extends React.Component {
     };
     this.getSavedEntries = this.getSavedEntries.bind(this);
     this.submitNewEntry = this.submitNewEntry.bind(this);
-    //this.updateEntry = this.updateEntry.bind(this);
     this.update = this.update.bind(this);
     this.deleteEntry = this.deleteEntry.bind(this);
   }
@@ -52,25 +52,6 @@ class App extends React.Component {
         console.log('submitNewEntry: ', err);
       });
   }
-
-  // updateEntry(newEntry) {
-  //   axios
-  //     .put('/budget', {
-  //       description: newEntry.description,
-  //       newDate: newEntry.newDate,
-  //       newDescription: newEntry.newDescription,
-  //       newAmount: newEntry.newAmount,
-  //       newTransactionType: newEntry.newTransactionType,
-  //       newCategory: newEntry.newCategory,
-  //       newAccountName: newEntry.newAccountName,
-  //     })
-  //     .then(() => {
-  //       console.log('entry updated successful');
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
 
   update(entry, type) {
     console.log(entry);
@@ -121,6 +102,7 @@ class App extends React.Component {
           deleteEntry={this.deleteEntry}
         />
         <Form submitNewEntry={this.submitNewEntry} />
+        <Overview entries={this.state.entries} />
       </div>
     );
   }
