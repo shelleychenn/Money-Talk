@@ -1,16 +1,39 @@
 import React from "react";
 
-const Entry = (props) => {
+const Entry = ({ entry, update, deleteEntry }) => {
   return (
-    <tr>
-      <td className="date">{props.entry.date}</td>
-      <td className="description">{props.entry.description}</td>
-      <td className="amount">{props.entry.amount}</td>
-      <td className="transactionType">{props.entry.transactionType}</td>
-      <td className="category">{props.entry.category}</td>
-      <td className="accountName">{props.entry.accountName}</td>
-      <button className="button">Delete</button>
-    </tr>
+    <div className="entry">
+      <tr>
+        <td className="date">{entry.date}</td>
+        <td
+          className="description"
+          onClick={() => {
+            update(entry, "description");
+          }}
+        >
+          {entry.description}
+        </td>
+        <td
+          className="amount"
+          onClick={() => {
+            update(entry, "amount");
+          }}
+        >
+          {entry.amount}
+        </td>
+        <td className="transactionType">{entry.transactionType}</td>
+        <td className="category">{entry.category}</td>
+        <td className="accountName">{entry.accountName}</td>
+        <button
+          className="button"
+          onClick={() => {
+            deleteEntry(entry);
+          }}
+        >
+          Delete
+        </button>
+      </tr>
+    </div>
   );
 };
 
