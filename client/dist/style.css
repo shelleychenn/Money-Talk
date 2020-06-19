@@ -1,0 +1,8 @@
+.entry {
+  display: flex;
+}
+
+.delete-button {
+  margin-left: 8px;
+  max-height: 21px;
+}
