@@ -1,7 +1,13 @@
 import React from "react";
 import moment from "moment";
 
-const Entry = ({ entry, update, deleteEntry }) => {
+const Entry = ({
+  entry,
+  update,
+  deleteEntry,
+  getEntryByCategories,
+  handleViewChange,
+}) => {
   return (
     <tbody>
       <tr>
@@ -23,7 +29,15 @@ const Entry = ({ entry, update, deleteEntry }) => {
           {entry.amount}
         </td>
         <td className="transactionType">{entry.transactionType}</td>
-        <td className="category">{entry.category}</td>
+        <td
+          className="category"
+          onClick={() => {
+            getEntryByCategories(entry.category);
+            handleViewChange();
+          }}
+        >
+          {entry.category}
+        </td>
         <td className="accountName">{entry.accountName}</td>
         <button
           className="button"

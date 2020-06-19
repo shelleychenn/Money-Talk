@@ -79,4 +79,20 @@ budgetController.delete = (req, res) => {
     });
 };
 
+budgetController.getByCategory = (req, res) => {
+  let params = req.params.category;
+  console.log(params);
+  BudgetEntry.find({
+    category: params,
+  })
+    .then((data) => {
+      console.log(data);
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+};
+
 module.exports = budgetController;

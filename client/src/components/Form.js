@@ -43,6 +43,7 @@ class Form extends React.Component {
   }
 
   handleTransactionTypeChange(event) {
+    console.log(event.target.value);
     this.setState({
       transactionType: event.target.value,
     });

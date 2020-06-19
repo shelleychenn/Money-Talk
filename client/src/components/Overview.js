@@ -15,8 +15,8 @@ var Overview = ({ entries }) => {
   return (
     <div className="overview">
       <h2>Overview</h2>
-      <div>Total Debit: {totalDebit}</div>
-      <div>Total Credit: {totalCredit}</div>
+      <div>Total Spending: {totalDebit}</div>
+      <div>Total Saving: {totalCredit}</div>
       <div>Net Worth: {totalCredit - totalDebit}</div>
     </div>
   );

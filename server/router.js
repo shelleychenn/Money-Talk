@@ -7,6 +7,8 @@ router.post('/budget', budgetController.post);
 // get endpoint to get all entries in the database (getAll)
 router.get('/budget', budgetController.getAll);
 
+router.get('/budget/:category', budgetController.getByCategory);
+
 router.put('/budget/:id', budgetController.update);
 
 // delete endpoint to delete one entry (delete)
