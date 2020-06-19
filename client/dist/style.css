@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,400;1,700&display=swap");
+
+#app {
+  font-family: Nunito;
+  font-size: 16px;
+}
+.logo {
+  background-image: url("https://i.imgur.com/eEwuSsj.png");
+  background-repeat: no-repeat;
+  padding-bottom: 220px;
+  background-size: auto;
+  background-position: center top;
+}
+.summary {
+  position: absolute;
+  right: 50px;
+  width: 50%;
+}
+.summary-heading {
+  text-align: center;
+}
+.form {
+  position: absolute;
+  left: 50px;
+  width: 50%;
+}
+.form-heading {
+  margin-left: 150px;
+}
+.entry {
+}
+.button {
+  margin-top: 10px;
+  box-shadow: inset 0px 0px 14px -3px #f2fadc;
+  background: linear-gradient(to bottom, #dbe6c4 5%, #rgb(172, 230, 0), 100%);
+  background-color: #dbe6c4;
+  border-radius: 6px;
+  border: 1px solid #b2b8ad;
+  display: inline-block;
+  cursor: pointer;
+  color: #757d6f;
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 34px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ced9bf;
+}
+.button:hover {
+  background: linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+  background-color: #rgb(172, 230, 0);
+}
+.table {
+  text-align: center;
+}
+.date {
+  width: 100px;
+}
+.description {
+  width: 140px;
+}
+.amount {
+  width: 40px;
+}
+.transactionType {
+  width: 110px;
+}
+.category {
+  width: 110px;
+}
+.accountName {
+  width: 140px;
+}
+.form-input {
+  width: 80%;
+  display: block;
+  font-size: 0.9em;
+  height: 30px;
+  margin-bottom: 15px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form-textarea {
+  width: 80%;
+  display: block;
+  font-size: 0.9em;
+  height: 70px;
+  margin-bottom: 15px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
