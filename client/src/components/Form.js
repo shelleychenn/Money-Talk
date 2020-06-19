@@ -8,7 +8,7 @@ class Form extends React.Component {
       date: "",
       description: "",
       amount: "",
-      transactionType: "",
+      transactionType: "Credit",
       category: "",
       accountName: "",
     };
@@ -68,7 +68,7 @@ class Form extends React.Component {
       date: "",
       description: "",
       amount: "",
-      transactionType: "",
+      transactionType: "Credit",
       category: "",
       accountName: "",
     });
@@ -110,17 +110,15 @@ class Form extends React.Component {
           ></input>
           <label className="label">Choose a transaction type:</label>
           <select
-            value={this.state.transactionType}
             onChange={this.handleTransactionTypeChange}
+            defaultValue={this.props.transactionType}
             className="form-input"
-            placeholder="Debit/Credit"
-            required
           >
-            <option value="Debit" name="transactionType">
-              Debit
-            </option>
             <option value="Credit" name="transactionType">
               Credit
+            </option>
+            <option value="Debit" name="transactionType">
+              Debit
             </option>
           </select>
           <input

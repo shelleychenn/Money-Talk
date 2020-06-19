@@ -58,13 +58,13 @@
   text-align: center;
 }
 .date {
-  width: 150px;
+  width: 200px;
 }
 .description {
   width: 140px;
 }
 .amount {
-  width: 40px;
+  width: 70px;
 }
 .transactionType {
   width: 110px;
