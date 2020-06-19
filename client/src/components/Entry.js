@@ -1,6 +1,12 @@
-import React from "react";
+import React from 'react';
 
-const Entry = ({ entry, update, deleteEntry }) => {
+const Entry = ({
+  entry,
+  update,
+  deleteEntry,
+  getEntryByCategories,
+  handleViewChange,
+}) => {
   return (
     <tbody>
       <tr>
@@ -8,7 +14,7 @@ const Entry = ({ entry, update, deleteEntry }) => {
         <td
           className="description"
           onClick={() => {
-            update(entry, "description");
+            update(entry, 'description');
           }}
         >
           {entry.description}
@@ -16,13 +22,21 @@ const Entry = ({ entry, update, deleteEntry }) => {
         <td
           className="amount"
           onClick={() => {
-            update(entry, "amount");
+            update(entry, 'amount');
           }}
         >
           {entry.amount}
         </td>
         <td className="transactionType">{entry.transactionType}</td>
-        <td className="category">{entry.category}</td>
+        <td
+          className="category"
+          onClick={() => {
+            getEntryByCategories(entry.category);
+            handleViewChange();
+          }}
+        >
+          {entry.category}
+        </td>
         <td className="accountName">{entry.accountName}</td>
         <button
           className="button"

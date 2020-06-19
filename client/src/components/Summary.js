@@ -1,10 +1,24 @@
-import React from "react";
-import Entry from "./Entry.js";
+import React from 'react';
+import Entry from './Entry.js';
 
-const Summary = ({ entries, update, deleteEntry }) => {
+const Summary = ({
+  entries,
+  update,
+  deleteEntry,
+  getEntryByCategories,
+  handleViewChange,
+  switchToOriginalView,
+}) => {
   return (
     <div className="summary">
-      <h2 className="summary-heading">This is where your money goes</h2>
+      <h2
+        className="summary-heading"
+        onClick={() => {
+          switchToOriginalView();
+        }}
+      >
+        This is where your money goes
+      </h2>
       <table className="table">
         <tr>
           <th className="date">Date</th>
@@ -20,6 +34,8 @@ const Summary = ({ entries, update, deleteEntry }) => {
             key={entry._id}
             update={update}
             deleteEntry={deleteEntry}
+            getEntryByCategories={getEntryByCategories}
+            handleViewChange={handleViewChange}
           />
         ))}
       </table>

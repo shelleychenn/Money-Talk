@@ -1,22 +1,27 @@
-import React from "react";
-import Favicon from "react-favicon";
-import { hot } from "react-hot-loader/root";
-import axios from "axios";
-import Summary from "./Summary.js";
-import Form from "./Form.js";
-import sampleData from "../sample_data.js";
-import Overview from "./Overview.js";
+import React from 'react';
+import Favicon from 'react-favicon';
+import { hot } from 'react-hot-loader/root';
+import axios from 'axios';
+import Summary from './Summary.js';
+import Form from './Form.js';
+import sampleData from '../sample_data.js';
+import Overview from './Overview.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       entries: [],
+      entryByCategories: [],
+      view: 'summary',
     };
     this.getSavedEntries = this.getSavedEntries.bind(this);
     this.submitNewEntry = this.submitNewEntry.bind(this);
     this.update = this.update.bind(this);
     this.deleteEntry = this.deleteEntry.bind(this);
+    this.getEntryByCategories = this.getEntryByCategories.bind(this);
+    this.handleViewChange = this.handleViewChange.bind(this);
+    this.switchToOriginalView = this.switchToOriginalView.bind(this);
   }
 
   componentDidMount() {
@@ -25,20 +30,20 @@ class App extends React.Component {
 
   getSavedEntries() {
     axios
-      .get("/budget")
+      .get('/budget')
       .then(({ data }) => {
         this.setState({
           entries: data,
         });
       })
       .catch((err) => {
-        console.log("getSavedEntries: ", err);
+        console.log('getSavedEntries: ', err);
       });
   }
 
   submitNewEntry(entry) {
     axios
-      .post("/budget", {
+      .post('/budget', {
         date: entry.date,
         description: entry.description,
         amount: entry.amount,
@@ -47,20 +52,20 @@ class App extends React.Component {
         accountName: entry.accountName,
       })
       .then(() => {
-        console.log("new entry posted successfully!");
+        console.log('new entry posted successfully!');
         this.getSavedEntries();
       })
       .catch((err) => {
-        console.log("submitNewEntry: ", err);
+        console.log('submitNewEntry: ', err);
       });
   }
 
   update(entry, type) {
     console.log(entry);
     let entryPrompt;
-    if (type === "description") {
+    if (type === 'description') {
       entryPrompt = entry.description;
-    } else if (type === "amount") {
+    } else if (type === 'amount') {
       entryPrompt = entry.amount;
     }
     let newValue = prompt(
@@ -73,7 +78,7 @@ class App extends React.Component {
       axios
         .put(`/budget/${entry._id}`, entry)
         .then(() => {
-          console.log("update successfully");
+          console.log('update successfully');
           this.getSavedEntries();
         })
         .catch((err) => {
@@ -86,7 +91,7 @@ class App extends React.Component {
     axios
       .delete(`/budget/${entry._id}`)
       .then(() => {
-        console.log("entry deleted!");
+        console.log('entry deleted!');
         this.getSavedEntries();
       })
       .catch((err) => {
@@ -94,7 +99,34 @@ class App extends React.Component {
       });
   }
 
+  getEntryByCategories(category) {
+    axios
+      .get(`./budget/${category}`)
+      .then(({ data }) => {
+        this.setState({ entryByCategories: data });
+      })
+      .catch((err) => {
+        console.log('get entries error: ', err);
+      });
+  }
+
+  handleViewChange() {
+    this.setState({
+      view: 'selectedEntries',
+    });
+  }
+
+  switchToOriginalView() {
+    this.setState({
+      view: 'summary',
+    });
+  }
+
   render() {
+    let view = this.state.view;
+    let data =
+      view === 'summary' ? this.state.entries : this.state.entryByCategories;
+
     return (
       <div>
         <Favicon url="https://money.pro/favicon.ico" />
@@ -103,9 +135,12 @@ class App extends React.Component {
         </div>
         <div className="container">
           <Summary
-            entries={this.state.entries}
+            entries={data}
             update={this.update}
             deleteEntry={this.deleteEntry}
+            getEntryByCategories={this.getEntryByCategories}
+            handleViewChange={this.handleViewChange}
+            switchToOriginalView={this.switchToOriginalView}
           />
           <Form submitNewEntry={this.submitNewEntry} />
           <Overview entries={this.state.entries} />

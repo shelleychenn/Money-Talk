@@ -1,16 +1,16 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "",
-      description: "",
-      amount: "",
-      transactionType: "",
-      category: "",
-      accountName: "",
+      date: '',
+      description: '',
+      amount: '',
+      transactionType: 'Debit',
+      category: '',
+      accountName: '',
     };
 
     this.handleDateChange = this.handleDateChange.bind(this);
@@ -43,6 +43,7 @@ class Form extends React.Component {
   }
 
   handleTransactionTypeChange(event) {
+    console.log(event.target.value);
     this.setState({
       transactionType: event.target.value,
     });
@@ -65,12 +66,12 @@ class Form extends React.Component {
     console.log(this.state);
     this.props.submitNewEntry(this.state);
     this.setState({
-      date: "",
-      description: "",
-      amount: "",
-      transactionType: "",
-      category: "",
-      accountName: "",
+      date: '',
+      description: '',
+      amount: '',
+      transactionType: 'Debit',
+      category: '',
+      accountName: '',
     });
   }
 
