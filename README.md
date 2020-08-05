@@ -1,6 +1,8 @@
-# empty-project
+# Money-Talk
 
-Empty project.
+> A single page budget / expense tracking application
+
+![](money-talk.png)
 
 ## Building and running on localhost
 
@@ -30,8 +32,9 @@ npm run build-dev
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+Open the file `dist/index.html` or `http://localhost:3000` in your browser
 
-## Credits
+## Contributors
 
-Made with [createapp.dev](https://createapp.dev/)
+Shelley Chen\
+Anna Makagonova
