@@ -2,7 +2,7 @@
 
 > A single page budget / expense tracking application
 
-![](money-talk.png){:height="60%" width="60%"}
+![](money-talk.png)
 
 ## Building and running on localhost
 
