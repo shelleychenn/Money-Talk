@@ -1,4 +1,4 @@
-# Money-Talk
+# money-talk
 
 > A single page budget / expense tracking application
 
